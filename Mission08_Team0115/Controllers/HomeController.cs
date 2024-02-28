@@ -18,7 +18,12 @@ namespace Mission08_Team0115.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Task()
+        {
+            return View();
+        }
+
+        public IActionResult Quadrant()
         {
             return View();
         }
@@ -28,5 +33,7 @@ namespace Mission08_Team0115.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
     }
 }
