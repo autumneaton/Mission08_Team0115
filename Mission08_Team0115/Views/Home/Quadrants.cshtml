@@ -1,4 +1,4 @@
-﻿@model Quadrant
+@model List<Quadrant>
 
 <div class="container">
     <div class="row bordered-row-top">
@@ -15,18 +15,22 @@
         <div class="col-5 text-center bordered-col-left">
             Quadrant 1
 
-@*             @foreach (var task in Model.Quadrant1Tasks)
+            @foreach (var x in Task.Quadrant1)
             {
-                <div>@task.TaskName</div>
-            } *@
+                <div>x.Task</div>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
+            }
         </div>
         <div class="col-5 text-center bordered-col-left bordered-col-right">
             Quadrant 2
 
-@*             @foreach (var task in Model.Quadrant2Tasks)
+            @foreach (var x in Task.Quadrant1)
             {
-                <div>@task.TaskName</div>
-            } *@
+                <div>x.Task</div>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
+            }
         </div>
     </div>
 
@@ -34,22 +38,23 @@
         <div class="col-2 text-center bordered-col-left"><b>Not Important</b></div>
         <div class="col-5 text-center bordered-col-left">
             Quadrant 3
-            
-@*             @foreach (var task in Model.Quadrant3Tasks)
+
+            @foreach (var x in Task.Quadrant1)
             {
-                <div>@task.TaskName</div>
-            } *@
+                <div>x.Task</div>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
+            }
         </div>
         <div class="col-5 text-center bordered-col-left bordered-col-right">
              Quadrant 4
 
-            @*@foreach (var task in Model.Quadrant4Tasks)
-            {
-                <div>@task.TaskName</div>
-            } *@
+             @foreach (var x in Task.Quadrant1)
+             {
+                <div>x.Task</div>
+                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
+                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
+             }
         </div>
     </div>
 </div>
-
-@* <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskID">Update</a></td>
-<a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskID">Delete</a></td> *@
