@@ -1,7 +1,3 @@
-html {
-  font-size: 14px;
-}
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -13,10 +9,119 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
 }
 
+
+/* General reset for body to ensure consistent padding and margin */
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    padding: 0;
+    font-family: Arial, sans-serif; /* or your preferred font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Style for h2 that's not within the header */
+h2 {
+    text-align: center;
+    color: #333; /* Dark grey color for text */
+}
+
+/* General form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between form items */
+    margin-top: 20px;
+}
+
+    /* Style for divs in form to align items */
+    form > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px; /* Adjust based on preference */
+    }
+
+label {
+    margin-right: 10px; /* Space between label and input */
+}
+
+input, select {
+    padding: 8px;
+    width: 160px; /* Adjust based on preference */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    button:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+
+/* Style for links that are not within the header */
+a:not(header a) {
+    display: inline-block;
+    background-color: #457b9d; /* Bootstrap success color */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+    a:not(header a):hover {
+        background-color: #1d3557; /* Darker shade on hover */
+        color: #ffffff;
+    }
+
+/* Adjust this section as needed if you have a specific header style */
+header {
+    /* Example: */
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #f8f9fa; /* Light background for header */
+}
+
+    /* To specifically exclude header links and buttons from the global styling */
+    header h2, header a, header button {
+        all: revert;
+    }
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px; /* Adds space between the welcome message and the first button */
+}
+
+.bordered-col-right {
+    border-right: 2px solid #000; /* Right border for each column */
+}
+
+.bordered-row-bottom {
+    border-bottom: 2px solid #000; /* Bottom border for each row */
+}
+
+.bordered-row-top {
+    border-top: 2px solid #000; /* Right border for each column */
+}
+
+.bordered-col-left {
+    border-left: 2px solid #000;
 }
