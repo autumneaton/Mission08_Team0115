@@ -19,8 +19,14 @@
         <input>
     </div>
     <div>
-        <label asp-for="Quadrant">Quadrant:</label>
+        <label asp-for="Quadrant1">Quadrant:</label>
         <input>
+        <select asp-for="Category">
+            <option value=1>1 (Urgent and Important)</option>
+            <option value=2>2 (Not Urgent and Important)</option>
+            <option value=3>3 (Urgent and Not Important)</option>
+            <option value=4>4 (Not Urgent and Not Important)</option>
+            </select>
     </div>
     <div>
         <label asp-for="Category">Category:</label>
