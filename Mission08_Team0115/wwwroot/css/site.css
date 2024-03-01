@@ -20,19 +20,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-.bordered-col-left {
-    border-left: 2px solid #000;
-}
-
-.bordered-col-right {
-    border-right: 2px solid #000; /* Right border for each column */
-}
-
-.bordered-row-bottom {
-    border-bottom: 2px solid #000; /* Bottom border for each row */
-}
-
-.bordered-row-top {
-    border-top: 2px solid #000; /* Right border for each column */
-}
