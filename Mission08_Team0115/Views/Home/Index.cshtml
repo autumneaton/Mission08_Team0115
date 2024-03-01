@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model Quadrant
 
 <body style="margin-bottom: 2rem;">
     <div class="btn-container" style="max-height:200px;">
@@ -13,7 +14,7 @@
             <a asp-controller="Home" asp-action="Task">Add a Task to your list</a>
         </div>
         <div class="btn-container">
-            <a asp-controller="Home" asp-action="Quadrant">View your Time Management Matrix</a>
+            <a asp-controller="Home" asp-action="Quadrants">View your Time Management Matrix</a>
         </div>
     </div>
 </body>

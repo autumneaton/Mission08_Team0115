@@ -2,8 +2,8 @@
     ViewData["Title"] = "Privacy Policy";
 }
 
-@* @model Movies
- *@
+@model Quadrant
+
 
 
 <h2>
@@ -19,17 +19,22 @@
         <input>
     </div>
     <div>
-        <label asp-for="Quadrant">Quadrant:</label>
-        <input>
+        <label asp-for="Quadrant1">Quadrant:</label>
+        <select asp-for="Category">
+            <option value=1>1 (Urgent and Important)</option>
+            <option value=2>2 (Not Urgent and Important)</option>
+            <option value=3>3 (Urgent and Not Important)</option>
+            <option value=4>4 (Not Urgent and Not Important)</option>
+            </select>
     </div>
     <div>
         <label asp-for="Category">Category:</label>
         <select asp-for="Category">
             <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Categories)
+            @* @foreach (Category c in ViewBag.Categories)
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
-            }
+            } *@
         </select>
     </div>
     <div>
