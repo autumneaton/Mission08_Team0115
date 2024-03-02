@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission08_Team0115.Models;
 using System.Diagnostics;
 
@@ -22,23 +23,30 @@ namespace Mission08_Team0115.Controllers
         [HttpGet]
         public IActionResult Task()
         {
-            return View(new Quadrant());
+            ViewBag.Categories = _repo.TaskCategories
+                .OrderBy(x => x.Category).ToList();
+
+            return View("Task", new Quadrant());
         }
 
         [HttpPost]
         public IActionResult Task(Quadrant q)
         {
+            ViewBag.Categories = _repo.TaskCategories
+                .OrderBy(x => x.Category).ToList();
+
             if (ModelState.IsValid)
             {
                 _repo.AddTask(q);
             }
-            return View(new Quadrant());
+            return RedirectToAction("Quadrants");
         }
 
         [HttpGet]
         public IActionResult Quadrants()
         {
-            return View();
+            List<Models.Quadrant> QuadrantList = _repo.Quadrants;
+            return View(QuadrantList);
         }
 
 
@@ -49,6 +57,53 @@ namespace Mission08_Team0115.Controllers
         }
 
 
-        
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Quadrant recordToEdit = _repo.Quadrants
+                .Single(x => x.Key == id);
+
+            ViewBag.Categories = _repo.TaskCategories
+                .OrderBy(x => x.Category)
+                .ToList();
+
+            return View("Task", recordToEdit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Quadrant updatedInfo)
+        {
+            ViewBag.Categories = _repo.TaskCategories
+                .OrderBy(x => x.Category)
+                .ToList();
+
+            if (ModelState.IsValid)
+            {
+                _repo.UpdateTask(updatedInfo);
+            }
+
+            return RedirectToAction("Quadrants");
+        }
+
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+           Quadrant recordToDelete = _repo.Quadrants
+                .Single(x => x.Key == id);
+
+            return View(recordToDelete);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Quadrant application)
+        {
+            if (ModelState.IsValid)
+            {
+                _repo.RemoveTask(application);
+            }
+
+            return RedirectToAction("Quadrants");
+        }
     }
 }

@@ -29,7 +29,6 @@ public partial class Mission08QuadrantsContext : DbContext
             entity.HasKey(e => e.Key);
 
             entity.Property(e => e.Key)
-                .ValueGeneratedNever()
                 .HasColumnType("NUMERIC");
             entity.Property(e => e.Quadrant1).HasColumnName("Quadrant");
         });
