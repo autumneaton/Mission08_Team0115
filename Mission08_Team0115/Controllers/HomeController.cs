@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission08_Team0115.Models;
 using System.Diagnostics;
 
@@ -22,7 +23,9 @@ namespace Mission08_Team0115.Controllers
         [HttpGet]
         public IActionResult Task()
         {
-            return View(new Quadrant());
+            ViewBag.Categories = _repo.Categories
+                .OrderBy(x => x.Category).ToList();
+            return View("Task", new Quadrant());
         }
 
         [HttpPost]
@@ -38,7 +41,10 @@ namespace Mission08_Team0115.Controllers
         [HttpGet]
         public IActionResult Quadrants()
         {
-            return View();
+            var QuadrantList = _repo.Quadrants
+                .Include(x => x.Category)
+                .OrderBy(x => x.Task).ToList();
+            return View(QuadrantList);
         }
 
 
