@@ -20,6 +20,8 @@ namespace Mission08_Team0115.Controllers
             return View();
         }
 
+        //The get and post for submitting the task
+
         [HttpGet]
         public IActionResult Task()
         {
@@ -42,6 +44,8 @@ namespace Mission08_Team0115.Controllers
             return RedirectToAction("Quadrants");
         }
 
+        // Get for the quadrants
+
         [HttpGet]
         public IActionResult Quadrants()
         {
@@ -56,6 +60,7 @@ namespace Mission08_Team0115.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        //Get and post for editing tasks
 
         [HttpGet]
         public IActionResult Edit(int id)
@@ -85,6 +90,7 @@ namespace Mission08_Team0115.Controllers
             return RedirectToAction("Quadrants");
         }
 
+        //Get and post for deleting tasks
 
         [HttpGet]
         public IActionResult Delete(int id)

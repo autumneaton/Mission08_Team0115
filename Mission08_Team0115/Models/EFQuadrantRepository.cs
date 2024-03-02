@@ -8,6 +8,8 @@
             _context = temp;
         }
 
+        //This should help add, remove, and update tasks
+
         public List<Quadrant> Quadrants => _context.Quadrants.ToList();
 
         public List<TaskCategory> TaskCategories => _context.Categories.ToList();
