@@ -15,22 +15,34 @@
         <div class="col-5 text-center bordered-col-left">
             Quadrant 1
 
-            @foreach (var x in Task.Quadrant1)
-            {
-                <div>x.Task</div>
-                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
-                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
-            }
+            <table>
+                <tbody>
+                    @foreach (var x in Task.Where(x => x.Quadrant1 == 1))
+                    {
+                        <tr>
+                            <td>@x.Task</td>
+                            <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a></td>
+                            <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
         <div class="col-5 text-center bordered-col-left bordered-col-right">
             Quadrant 2
 
-            @foreach (var x in Task.Quadrant1)
-            {
-                <div>x.Task</div>
-                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
-                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
-            }
+            <table>
+                <tbody>
+                    @foreach (var x in Task.Where(x => x.Quadrant1 == 2))
+                    {
+                        <tr>
+                            <td>@x.Task</td>
+                            <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a></td>
+                            <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -38,23 +50,33 @@
         <div class="col-2 text-center bordered-col-left"><b>Not Important</b></div>
         <div class="col-5 text-center bordered-col-left">
             Quadrant 3
-
-            @foreach (var x in Task.Quadrant1)
-            {
-                <div>x.Task</div>
-                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
-                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
-            }
+            <table>
+                <tbody>
+                    @foreach (var x in Task.Where(x => x.Quadrant1 == 3))
+                    {
+                        <tr>
+                            <td>@x.Task</td>
+                            <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a></td>
+                            <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
         <div class="col-5 text-center bordered-col-left bordered-col-right">
              Quadrant 4
-
-             @foreach (var x in Task.Quadrant1)
-             {
-                <div>x.Task</div>
-                <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a>
-                <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a>
-             }
+            <table>
+                <tbody>
+                    @foreach (var x in Task.Where(x => x.Quadrant1 == 4))
+                    {
+                        <tr>
+                            <td>@x.Task</td>
+                            <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.Key">Update</a></td>
+                            <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.Key">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
