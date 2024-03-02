@@ -1,8 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model Quadrant
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body style="margin-bottom: 2rem;">
+    <div class="btn-container" style="max-height:200px;">
+        <img src="https://thumbs.dreamstime.com/b/satisfied-successful-man-beard-pointing-fingers-down-paying-attention-advertising-area-showing-freespace-looking-camera-211379302.jpg" />
+        <h2>
+            Welcome to your very own task list!
+        </h2>
+
+        <div class="btn-container">
+            <a asp-controller="Home" asp-action="Task">Add a Task to your list</a>
+        </div>
+        <div class="btn-container">
+            <a asp-controller="Home" asp-action="Quadrants">View your Time Management Matrix</a>
+        </div>
+    </div>
+</body>
+
