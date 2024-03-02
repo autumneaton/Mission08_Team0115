@@ -10,10 +10,24 @@
 
         public List<Quadrant> Quadrants => _context.Quadrants.ToList();
 
+        public List<TaskCategory> TaskCategories => _context.Categories.ToList();
+
         public void AddTask(Quadrant quadrant) 
         {
             _context.Add(quadrant);
             _context.SaveChanges();
+        }
+
+        public void RemoveTask(Quadrant quadrant)
+        {
+            //_context.Add(quadrant);
+            //_context.SaveChanges();
+        }
+
+        public void UpdateTask(Quadrant quadrant)
+        {
+            //_context.Add(quadrant);
+           // _context.SaveChanges();
         }
     }
 }

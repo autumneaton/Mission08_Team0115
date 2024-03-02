@@ -11,7 +11,7 @@ public partial class Quadrant
     public int Key { get; set; }
 
     [Required]
-    public string Task { get; set; }
+    public string? Task { get; set; }
 
     public string? DueDate { get; set; }
 
@@ -21,5 +21,5 @@ public partial class Quadrant
     public int CategoryId { get; set; }
     public TaskCategory? Category { get; set; }
 
-    public int Completed { get; set; }
+    public bool Completed { get; set; }
 }

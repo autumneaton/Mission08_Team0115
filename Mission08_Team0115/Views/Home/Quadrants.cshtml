@@ -1,4 +1,4 @@
-@model Quadrant
+@model List<Mission08_Team0115.Models.Quadrant>
 
 <div class="container">
     <div class="row bordered-row-top">
@@ -17,7 +17,7 @@
 
             <table>
                 <tbody>
-                    @foreach (var x in Quadrants.Where(x => x.Quadrant1 == 1))
+                    @foreach (var x in Model.Where(x => x.Quadrant1 == 1))
                     {
                         <tr>
                             <td>@x.Task</td>
@@ -33,7 +33,7 @@
 
             <table>
                 <tbody>
-                    @foreach (var x in Quadrants.Where(x => x.Quadrant1 == 2))
+                    @foreach (var x in Model.Where(x => x.Quadrant1 == 2))
                     {
                         <tr>
                             <td>@x.Task</td>
@@ -52,7 +52,7 @@
             Quadrant 3
             <table>
                 <tbody>
-                    @foreach (var x in Quadrants.Where(x => x.Quadrant1 == 3))
+                    @foreach (var x in Model.Where(x => x.Quadrant1 == 3))
                     {
                         <tr>
                             <td>@x.Task</td>
@@ -67,7 +67,7 @@
              Quadrant 4
             <table>
                 <tbody>
-                    @foreach (var x in Quadrants.Where(x => x.Quadrant1 == 4))
+                    @foreach (var x in Model.Where(x => x.Quadrant1 == 4))
                     {
                         <tr>
                             <td>@x.Task</td>
@@ -78,9 +78,5 @@
                 </tbody>
             </table>
         </div>
-        <form>
-            <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.Key">Edit</a>
-            <a class="btn btn-danger" asp-action="Delete" asp-rout-id="@Model.Key" method="post">Delete</a>
-        </form>
     </div>
 </div>

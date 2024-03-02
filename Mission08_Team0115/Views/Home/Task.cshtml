@@ -11,17 +11,18 @@
         <div class="col-md-8">
             <h2>Add Task</h2>
             <form method="post">
+                <input type="hidden" asp-for="Key" />
                 <div>
                     <label asp-for="Task">Task:</label>
-                    <input>
+                    <input asp-for="Task">
                 </div>
                 <div>
                     <label asp-for="DueDate">Due Date:</label>
-                    <input>
+                    <input asp-for="DueDate">
                 </div>
                 <div>
                     <label asp-for="Quadrant1">Quadrant:</label>
-                    <select asp-for="Category">
+                    <select asp-for="Quadrant1">
                         <option value=1>1 (Urgent and Important)</option>
                         <option value=2>2 (Not Urgent and Important)</option>
                         <option value=3>3 (Urgent and Not Important)</option>
@@ -30,9 +31,12 @@
                 </div>
                 <div>
                     <label asp-for="Category">Category:</label>
-                    <select asp-for="Category">
+                    <select asp-for="CategoryId">
                         <option value="">Select a Category</option>
-                        @* Dynamic category options here *@
+                        @foreach (TaskCategory c in ViewBag.Categories)
+                        {
+                            <option value="@c.CategoryId">@c.Category</option>
+                        }
                     </select>
                 </div>
                 <div>
@@ -42,9 +46,7 @@
                         <option value="false">No</option>
                     </select>
                 </div>
-                <div>
-                    <button type="submit">Submit Task</button>
-                </div>
+                <button type="submit">Submit Task</button>
                 <div asp-validation-summary="All"></div>
             </form>
         </div>

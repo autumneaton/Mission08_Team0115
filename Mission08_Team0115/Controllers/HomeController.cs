@@ -23,27 +23,29 @@ namespace Mission08_Team0115.Controllers
         [HttpGet]
         public IActionResult Task()
         {
-            ViewBag.Categories = _repo.Categories
+            ViewBag.Categories = _repo.TaskCategories
                 .OrderBy(x => x.Category).ToList();
+
             return View("Task", new Quadrant());
         }
 
         [HttpPost]
         public IActionResult Task(Quadrant q)
         {
+            ViewBag.Categories = _repo.TaskCategories
+                .OrderBy(x => x.Category).ToList();
+
             if (ModelState.IsValid)
             {
                 _repo.AddTask(q);
             }
-            return View(new Quadrant());
+            return View("Task", new Quadrant());
         }
 
         [HttpGet]
         public IActionResult Quadrants()
         {
-            var QuadrantList = _repo.Quadrants
-                .Include(x => x.Category)
-                .OrderBy(x => x.Task).ToList();
+            List<Models.Quadrant> QuadrantList = _repo.Quadrants;
             return View(QuadrantList);
         }
 
